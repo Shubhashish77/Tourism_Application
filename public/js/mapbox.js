@@ -1,8 +1,4 @@
-console.log("hello from client side");
-const locations = JSON.parse(document.getElementById("map").dataset.locations);
-
-console.log(locations);
-
+export const displayMap = (locations) => {
 mapboxgl.accessToken =
   "pk.eyJ1Ijoic2h1Ymhhc2hpc2g3NyIsImEiOiJja3hyOXRyMjExeGtmMndrbzVocGszNTVwIn0.fl1e9mxZ6iTPy4SIHlhu6g";
 const map = new mapboxgl.Map({
@@ -47,3 +43,4 @@ map.fitBounds(bounds, {
     right: 100,
   },
 });
+}
