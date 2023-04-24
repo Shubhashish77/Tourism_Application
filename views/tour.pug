@@ -65,15 +65,14 @@ block content
                         .overview-box__detail
                             img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
                             - if(guide.role==='lead-guide')
-                                span.overview-box__label= guide.role
+                                span.overview-box__label Lead Guide
                             - if(guide.role==='guide')
-                                span.overview-box__label= guide.role
+                                span.overview-box__label Tour Guide
                             span.overview-box__text= guide.name
 
         .description-box
             h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour` 
             - const paragraphs = tour.description.split('/n');
-            //- console.log(paragraphs);
             each p in paragraphs     
                 p.description__text=p
 

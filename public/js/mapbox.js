@@ -1,21 +1,17 @@
-console.log("hello from client side");
-const locations = JSON.parse(document.getElementById("map").dataset.locations);
-
-console.log(locations);
-
-mapboxgl.accessToken =
+export const displayMap = (locations) => {
+  mapboxgl.accessToken =
   "pk.eyJ1Ijoic2h1Ymhhc2hpc2g3NyIsImEiOiJja3hyOXRyMjExeGtmMndrbzVocGszNTVwIn0.fl1e9mxZ6iTPy4SIHlhu6g";
-const map = new mapboxgl.Map({
-  container: "map", // container ID
-  style: "mapbox://styles/shubhashish77/ckxrasdwq7nbt15qztib8s0sl", // style URL
-  scrollZoom: false,
-  //   center: [-74.5, 40], // starting position [lng, lat]
-  //   zoom: 9, // starting zoom
-});
+  const map = new mapboxgl.Map({
+    container: "map", // container ID
+    style: "mapbox://styles/shubhashish77/ckxrasdwq7nbt15qztib8s0sl", // style URL
+    scrollZoom: false,
+    //   center: [-74.5, 40], // starting position [lng, lat]
+    //   zoom: 9, // starting zoom
+  });
 
-const bounds = new mapboxgl.LngLatBounds();
+  const bounds = new mapboxgl.LngLatBounds();
 
-locations.forEach((loc) => {
+  locations.forEach((loc) => {
   // Create marker
   const el = document.createElement("div");
   el.className = "marker";
@@ -47,3 +43,5 @@ map.fitBounds(bounds, {
     right: 100,
   },
 });
+}
+
